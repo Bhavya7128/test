@@ -1,0 +1,8 @@
+def top_k_frequent(nums, k):
+    freq_map = {}
+    for num in nums:
+        freq_map[num] = freq_map.get(num, 0) + 1
+    
+    sorted_freq = sorted(freq_map.items(), key=lambda item: item[1], reverse=True)
+    
+    return [num for num, freq in sorted_freq[:k]]
